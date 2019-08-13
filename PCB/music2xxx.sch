@@ -1,0 +1,2246 @@
+EESchema Schematic File Version 4
+LIBS:music2xxx-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Music 2xxx Midi Interface"
+Date "2019-07-11"
+Rev "1.0"
+Comp "J Lane"
+Comment1 "Based on Colin Fraser's reverse engineered circuit"
+Comment2 "Hybrid Music 2000 Clone"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR076
+U 1 1 5CD7635A
+P 8700 4850
+F 0 "#PWR076" H 8700 4600 50  0001 C CNN
+F 1 "GND" H 8705 4677 50  0000 C CNN
+F 2 "" H 8700 4850 50  0001 C CNN
+F 3 "" H 8700 4850 50  0001 C CNN
+	1    8700 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_ALT D4
+U 1 1 5CD75193
+P 8450 4800
+F 0 "D4" H 8500 4550 50  0000 R CNN
+F 1 "PWR" H 8550 4650 50  0000 R CNN
+F 2 "musix5xxx-custom:LED_D3.0mm" H 8450 4800 50  0001 C CNN
+F 3 "~" H 8450 4800 50  0001 C CNN
+	1    8450 4800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 5CD2FB85
+P 8100 4800
+F 0 "R5" V 8200 4900 50  0000 R CNN
+F 1 "1K" V 8200 4750 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8030 4800 50  0001 C CNN
+F 3 "~" H 8100 4800 50  0001 C CNN
+	1    8100 4800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:CP C2
+U 1 1 5D7014D8
+P 7050 5650
+F 0 "C2" H 7168 5696 50  0000 L CNN
+F 1 "47uF" H 7168 5605 50  0000 L CNN
+F 2 "musix5xxx-custom:CP_Radial_D6.3mm_P2.50mm" H 7088 5500 50  0001 C CNN
+F 3 "~" H 7050 5650 50  0001 C CNN
+	1    7050 5650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J3
+U 1 1 5CCB2AAA
+P 6950 4450
+F 0 "J3" H 6868 4125 50  0000 C CNN
+F 1 "+5V" H 6868 4216 50  0000 C CNN
+F 2 "Connectors_Molex:Molex_KK-6410-02_02x2.54mm_Straight" H 6950 4450 50  0001 C CNN
+F 3 "~" H 6950 4450 50  0001 C CNN
+	1    6950 4450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR066
+U 1 1 5CCB36E5
+P 7250 4600
+F 0 "#PWR066" H 7250 4350 50  0001 C CNN
+F 1 "GND" H 7255 4427 50  0000 C CNN
+F 2 "" H 7250 4600 50  0001 C CNN
+F 3 "" H 7250 4600 50  0001 C CNN
+	1    7250 4600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR012
+U 1 1 5CCB399C
+P 7250 4400
+F 0 "#PWR012" H 7250 4250 50  0001 C CNN
+F 1 "+5V" H 7265 4573 50  0000 C CNN
+F 2 "" H 7250 4400 50  0001 C CNN
+F 3 "" H 7250 4400 50  0001 C CNN
+	1    7250 4400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 4400 7250 4450
+Wire Wire Line
+	7250 4450 7150 4450
+Wire Wire Line
+	7250 4600 7250 4550
+Wire Wire Line
+	7250 4550 7150 4550
+$Comp
+L Connector_Generic:Conn_01x02 J4
+U 1 1 5CE1ABFD
+P 6700 5100
+F 0 "J4" H 6618 4775 50  0000 C CNN
+F 1 "+5V" H 6618 4866 50  0000 C CNN
+F 2 "Connectors_Molex:Molex_KK-6410-02_02x2.54mm_Straight" H 6700 5100 50  0001 C CNN
+F 3 "~" H 6700 5100 50  0001 C CNN
+	1    6700 5100
+	-1   0    0    -1  
+$EndComp
+Text Label 2600 1700 0    50   ~ 0
+0V
+Text Label 900  3050 0    50   ~ 0
+d0
+Text Label 900  3150 0    50   ~ 0
+d1
+Text Label 900  3250 0    50   ~ 0
+d2
+Text Label 900  3350 0    50   ~ 0
+d3
+Text Label 900  3450 0    50   ~ 0
+d4
+Text Label 900  3550 0    50   ~ 0
+d5
+Text Label 900  3650 0    50   ~ 0
+d6
+Text Label 900  3750 0    50   ~ 0
+d7
+Wire Wire Line
+	650  4250 650  4150
+Wire Wire Line
+	650  4150 650  4100
+Connection ~ 650  4150
+$Comp
+L power:+5V #PWR016
+U 1 1 5D041CBD
+P 650 4100
+F 0 "#PWR016" H 650 3950 50  0001 C CNN
+F 1 "+5V" H 665 4273 50  0000 C CNN
+F 2 "" H 650 4100 50  0001 C CNN
+F 3 "" H 650 4100 50  0001 C CNN
+	1    650  4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x17_Odd_Even J1
+U 1 1 5D04AE42
+P 850 1600
+F 0 "J1" H 900 2617 50  0000 C CNN
+F 1 "1MHzBus1" H 900 2526 50  0000 C CNN
+F 2 "musix5xxx-custom:IDC-Header_2x17_Pitch2.54mm_Angled" H 850 1600 50  0001 C CNN
+F 3 "~" H 850 1600 50  0001 C CNN
+	1    850  1600
+	1    0    0    -1  
+$EndComp
+Text Label 1400 2400 2    50   ~ 0
+a7
+Text Label 550  2400 0    50   ~ 0
+a6
+Text Label 1400 2300 2    50   ~ 0
+a5
+Text Label 550  2300 0    50   ~ 0
+a4
+Text Label 1400 2200 2    50   ~ 0
+a3
+Text Label 550  2200 0    50   ~ 0
+a2
+Text Label 1400 2100 2    50   ~ 0
+a1
+Text Label 550  2100 0    50   ~ 0
+a0
+Text Label 1400 2000 2    50   ~ 0
+0V
+Text Label 550  2000 0    50   ~ 0
+d7
+Text Label 1400 1900 2    50   ~ 0
+d6
+Text Label 550  1900 0    50   ~ 0
+d5
+Text Label 1400 1800 2    50   ~ 0
+d4
+Text Label 550  1800 0    50   ~ 0
+d3
+Text Label 1400 1700 2    50   ~ 0
+d2
+Text Label 550  1700 0    50   ~ 0
+d1
+Text Label 1400 1600 2    50   ~ 0
+d0
+Text Label 550  1600 0    50   ~ 0
+0V
+Text Label 1400 1500 2    50   ~ 0
+AUDIO
+Text Label 550  1500 0    50   ~ 0
+0V
+Text Label 1400 1400 2    50   ~ 0
+~RST
+Text Label 550  1400 0    50   ~ 0
+0V
+Text Label 1400 1300 2    50   ~ 0
+~PGFD
+Text Label 550  1300 0    50   ~ 0
+0V
+Text Label 1400 1200 2    50   ~ 0
+~PGFC
+Text Label 550  1200 0    50   ~ 0
+0V
+Text Label 1400 1100 2    50   ~ 0
+~IRQ
+Text Label 550  1100 0    50   ~ 0
+0V
+Text Label 1400 1000 2    50   ~ 0
+~NMI
+Text Label 550  1000 0    50   ~ 0
+0V
+Text Label 1400 900  2    50   ~ 0
+1MHZE
+Text Label 550  900  0    50   ~ 0
+0V
+Text Label 1400 800  2    50   ~ 0
+R~W
+Text Label 550  800  0    50   ~ 0
+0V
+Wire Wire Line
+	550  2400 650  2400
+Wire Wire Line
+	1150 2400 1400 2400
+Wire Wire Line
+	550  2300 650  2300
+Wire Wire Line
+	1150 2300 1400 2300
+Wire Wire Line
+	1400 2200 1150 2200
+Wire Wire Line
+	650  2200 550  2200
+Wire Wire Line
+	550  2100 650  2100
+Wire Wire Line
+	1150 2100 1400 2100
+Wire Wire Line
+	550  2000 650  2000
+Wire Wire Line
+	1150 2000 1400 2000
+Wire Wire Line
+	550  1900 650  1900
+Wire Wire Line
+	1150 1900 1400 1900
+Wire Wire Line
+	1400 1800 1150 1800
+Wire Wire Line
+	650  1800 550  1800
+Wire Wire Line
+	550  1700 650  1700
+Wire Wire Line
+	1150 1700 1400 1700
+Wire Wire Line
+	550  1600 650  1600
+Wire Wire Line
+	1150 1600 1400 1600
+Wire Wire Line
+	550  1500 650  1500
+Wire Wire Line
+	1150 1500 1400 1500
+Wire Wire Line
+	1400 1400 1150 1400
+Wire Wire Line
+	650  1400 550  1400
+Wire Wire Line
+	550  1300 650  1300
+Wire Wire Line
+	1150 1300 1400 1300
+Wire Wire Line
+	550  1200 650  1200
+Wire Wire Line
+	1150 1200 1400 1200
+Wire Wire Line
+	550  1100 650  1100
+Wire Wire Line
+	1150 1100 1400 1100
+Wire Wire Line
+	1400 1000 1150 1000
+Wire Wire Line
+	650  1000 550  1000
+Wire Wire Line
+	550  900  650  900 
+Wire Wire Line
+	1150 900  1400 900 
+Wire Wire Line
+	550  800  650  800 
+Wire Wire Line
+	1150 800  1400 800 
+$Comp
+L Connector_Generic:Conn_02x17_Odd_Even J2
+U 1 1 5D117666
+P 1800 1600
+F 0 "J2" H 1850 2617 50  0000 C CNN
+F 1 "1MHzBus2" H 1850 2526 50  0000 C CNN
+F 2 "musix5xxx-custom:IDC-Header_2x17_Pitch2.54mm_Straight" H 1800 1600 50  0001 C CNN
+F 3 "~" H 1800 1600 50  0001 C CNN
+	1    1800 1600
+	1    0    0    -1  
+$EndComp
+Text Label 2350 2400 2    50   ~ 0
+a7
+Text Label 1500 2400 0    50   ~ 0
+a6
+Text Label 2350 2300 2    50   ~ 0
+a5
+Text Label 1500 2300 0    50   ~ 0
+a4
+Text Label 2350 2200 2    50   ~ 0
+a3
+Text Label 1500 2200 0    50   ~ 0
+a2
+Text Label 2350 2100 2    50   ~ 0
+a1
+Text Label 1500 2100 0    50   ~ 0
+a0
+Text Label 2350 2000 2    50   ~ 0
+0V
+Text Label 1500 2000 0    50   ~ 0
+d7
+Text Label 2350 1900 2    50   ~ 0
+d6
+Text Label 1500 1900 0    50   ~ 0
+d5
+Text Label 2350 1800 2    50   ~ 0
+d4
+Text Label 1500 1800 0    50   ~ 0
+d3
+Text Label 2350 1700 2    50   ~ 0
+d2
+Text Label 1500 1700 0    50   ~ 0
+d1
+Text Label 2350 1600 2    50   ~ 0
+d0
+Text Label 1500 1600 0    50   ~ 0
+0V
+Text Label 2350 1500 2    50   ~ 0
+AUDIO
+Text Label 1500 1500 0    50   ~ 0
+0V
+Text Label 2350 1400 2    50   ~ 0
+~RST
+Text Label 1500 1400 0    50   ~ 0
+0V
+Text Label 2350 1300 2    50   ~ 0
+~PGFD
+Text Label 1500 1300 0    50   ~ 0
+0V
+Text Label 2350 1200 2    50   ~ 0
+~PGFC
+Text Label 1500 1200 0    50   ~ 0
+0V
+Text Label 2350 1100 2    50   ~ 0
+~IRQ
+Text Label 1500 1100 0    50   ~ 0
+0V
+Text Label 2350 1000 2    50   ~ 0
+~NMI
+Text Label 1500 1000 0    50   ~ 0
+0V
+Text Label 2350 900  2    50   ~ 0
+1MHZE
+Text Label 1500 900  0    50   ~ 0
+0V
+Text Label 2350 800  2    50   ~ 0
+R~W
+Text Label 1500 800  0    50   ~ 0
+0V
+Wire Wire Line
+	1500 2400 1600 2400
+Wire Wire Line
+	2100 2400 2350 2400
+Wire Wire Line
+	1500 2300 1600 2300
+Wire Wire Line
+	2100 2300 2350 2300
+Wire Wire Line
+	2350 2200 2100 2200
+Wire Wire Line
+	1600 2200 1500 2200
+Wire Wire Line
+	1500 2100 1600 2100
+Wire Wire Line
+	2100 2100 2350 2100
+Wire Wire Line
+	1500 2000 1600 2000
+Wire Wire Line
+	2100 2000 2350 2000
+Wire Wire Line
+	1500 1900 1600 1900
+Wire Wire Line
+	2100 1900 2350 1900
+Wire Wire Line
+	2350 1800 2100 1800
+Wire Wire Line
+	1600 1800 1500 1800
+Wire Wire Line
+	1500 1700 1600 1700
+Wire Wire Line
+	2100 1700 2350 1700
+Wire Wire Line
+	1500 1600 1600 1600
+Wire Wire Line
+	2100 1600 2350 1600
+Wire Wire Line
+	1500 1500 1600 1500
+Wire Wire Line
+	2100 1500 2350 1500
+Wire Wire Line
+	2350 1400 2100 1400
+Wire Wire Line
+	1600 1400 1500 1400
+Wire Wire Line
+	1500 1300 1600 1300
+Wire Wire Line
+	2100 1300 2350 1300
+Wire Wire Line
+	1500 1200 1600 1200
+Wire Wire Line
+	2100 1200 2350 1200
+Wire Wire Line
+	1500 1100 1600 1100
+Wire Wire Line
+	2100 1100 2350 1100
+Wire Wire Line
+	2350 1000 2100 1000
+Wire Wire Line
+	1600 1000 1500 1000
+Wire Wire Line
+	1500 900  1600 900 
+Wire Wire Line
+	2100 900  2350 900 
+Wire Wire Line
+	1500 800  1600 800 
+Wire Wire Line
+	2100 800  2350 800 
+Text Label 650  4500 0    50   ~ 0
+1MHZE
+Text Label 2100 3250 2    50   ~ 0
+~IRQ
+Text Label 950  4050 0    50   ~ 0
+a0
+Wire Wire Line
+	900  4950 900  5050
+Connection ~ 900  5050
+Wire Wire Line
+	900  5050 900  5150
+Wire Wire Line
+	900  5150 900  5350
+Connection ~ 900  5150
+$Comp
+L power:GND #PWR020
+U 1 1 5D1625E5
+P 900 5350
+F 0 "#PWR020" H 900 5100 50  0001 C CNN
+F 1 "GND" H 905 5177 50  0000 C CNN
+F 2 "" H 900 5350 50  0001 C CNN
+F 3 "" H 900 5350 50  0001 C CNN
+	1    900  5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 4750 1000 4650
+Connection ~ 1000 4650
+Wire Wire Line
+	1000 4650 950  4650
+$Comp
+L Connector:DIN-5_180degree J5
+U 1 1 5D1F3D58
+P 1650 6600
+F 0 "J5" H 1650 6325 50  0000 C CNN
+F 1 "OUT 1" H 1650 6234 50  0000 C CNN
+F 2 "musix5xxx-custom:din_5_pcb_mount" H 1650 6600 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 1650 6600 50  0001 C CNN
+	1    1650 6600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 6500 2000 6500
+Wire Wire Line
+	1650 6300 1650 6100
+Wire Wire Line
+	1650 6100 1800 6100
+Wire Wire Line
+	1800 6100 1800 6150
+$Comp
+L power:GND #PWR031
+U 1 1 5D208533
+P 1800 6150
+F 0 "#PWR031" H 1800 5900 50  0001 C CNN
+F 1 "GND" H 1805 5977 50  0000 C CNN
+F 2 "" H 1800 6150 50  0001 C CNN
+F 3 "" H 1800 6150 50  0001 C CNN
+	1    1800 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R8
+U 1 1 5D20B449
+P 1300 6200
+F 0 "R8" H 1450 6250 50  0000 R CNN
+F 1 "220" H 1500 6150 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1230 6200 50  0001 C CNN
+F 3 "~" H 1300 6200 50  0001 C CNN
+	1    1300 6200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 6500 1300 6500
+Wire Wire Line
+	1300 6500 1300 6350
+$Comp
+L power:+5V #PWR028
+U 1 1 5D2162FA
+P 1300 6000
+F 0 "#PWR028" H 1300 5850 50  0001 C CNN
+F 1 "+5V" H 1315 6173 50  0000 C CNN
+F 2 "" H 1300 6000 50  0001 C CNN
+F 3 "" H 1300 6000 50  0001 C CNN
+	1    1300 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 6000 1300 6050
+NoConn ~ 1950 6600
+NoConn ~ 1350 6600
+$Comp
+L Device:LED_ALT D1
+U 1 1 5D257CE2
+P 10600 2850
+F 0 "D1" H 10650 2550 50  0000 R CNN
+F 1 "MIDI 1" H 10650 2650 50  0000 R CNN
+F 2 "musix5xxx-custom:LED_D3.0mm" H 10600 2850 50  0001 C CNN
+F 3 "~" H 10600 2850 50  0001 C CNN
+	1    10600 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10400 2850 10450 2850
+Wire Wire Line
+	2000 6500 2000 6350
+Wire Wire Line
+	1050 4150 650  4150
+Wire Wire Line
+	2100 3250 1950 3250
+Wire Wire Line
+	1950 4950 2000 4950
+NoConn ~ 1950 5050
+Wire Wire Line
+	1050 4750 1000 4750
+Wire Wire Line
+	1050 4650 1000 4650
+Wire Wire Line
+	900  5150 1050 5150
+Wire Wire Line
+	1050 5050 900  5050
+Wire Wire Line
+	1050 3050 900  3050
+Wire Wire Line
+	1050 3150 900  3150
+Wire Wire Line
+	1050 3250 900  3250
+Wire Wire Line
+	1050 4950 900  4950
+Wire Wire Line
+	1050 3350 900  3350
+Wire Wire Line
+	1050 3450 900  3450
+Wire Wire Line
+	1050 3550 900  3550
+Wire Wire Line
+	1050 3650 900  3650
+Wire Wire Line
+	1050 3750 900  3750
+Wire Wire Line
+	1000 4450 1050 4450
+$Comp
+L power:+5V #PWR011
+U 1 1 5CF729B8
+P 1550 2850
+F 0 "#PWR011" H 1550 2700 50  0001 C CNN
+F 1 "+5V" H 1565 3023 50  0000 C CNN
+F 2 "" H 1550 2850 50  0001 C CNN
+F 3 "" H 1550 2850 50  0001 C CNN
+	1    1550 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	950  4050 1050 4050
+Wire Wire Line
+	1050 4250 650  4250
+$Comp
+L power:GND #PWR021
+U 1 1 5CF7075D
+P 1550 5350
+F 0 "#PWR021" H 1550 5100 50  0001 C CNN
+F 1 "GND" H 1555 5177 50  0000 C CNN
+F 2 "" H 1550 5350 50  0001 C CNN
+F 3 "" H 1550 5350 50  0001 C CNN
+	1    1550 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5D257CEA
+P 10250 2850
+F 0 "R2" V 10500 2900 50  0000 R CNN
+F 1 "330" V 10400 2900 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10180 2850 50  0001 C CNN
+F 3 "~" H 10250 2850 50  0001 C CNN
+	1    10250 2850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 5D1A2D31
+P 2000 6200
+F 0 "R9" H 2150 6250 50  0000 R CNN
+F 1 "220" H 2200 6150 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1930 6200 50  0001 C CNN
+F 3 "~" H 2000 6200 50  0001 C CNN
+	1    2000 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_UART:MC6850 IC6
+U 1 1 5CF47C3F
+P 1550 4150
+F 0 "IC6" H 1750 5550 50  0000 C CNN
+F 1 "MC6850" H 1800 5450 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-24_W15.24mm_LongPads" H 1600 3000 50  0001 L CNN
+F 3 "http://pdf.datasheetcatalog.com/datasheet/motorola/MC6850.pdf" H 1550 4150 50  0001 C CNN
+	1    1550 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 6050 2000 6000
+Wire Wire Line
+	10100 2850 10050 2850
+$Comp
+L 74xx:74LS08 IC5
+U 1 1 5D1836E9
+P 2000 5700
+F 0 "IC5" H 2000 6025 50  0000 C CNN
+F 1 "74HCT08" H 2000 5934 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 2000 5700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 2000 5700 50  0001 C CNN
+	1    2000 5700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1900 5350 1900 5400
+Wire Wire Line
+	2100 5400 2100 5350
+Wire Wire Line
+	2000 4950 2000 5350
+Wire Wire Line
+	1900 5350 2000 5350
+Connection ~ 2000 5350
+Wire Wire Line
+	2000 5350 2100 5350
+$Comp
+L 74xx:74LS74 IC1
+U 1 1 5D34C798
+P 3150 1350
+F 0 "IC1" H 2850 1850 50  0000 C CNN
+F 1 "74HCT74" H 2850 1750 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 3150 1350 50  0001 C CNN
+F 3 "74xx/74hc_hct74.pdf" H 3150 1350 50  0001 C CNN
+	1    3150 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS74 IC1
+U 2 1 5D3DE0F1
+P 4750 1350
+F 0 "IC1" H 4950 1800 50  0000 C CNN
+F 1 "74HCT74" H 5000 1700 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 4750 1350 50  0001 C CNN
+F 3 "74xx/74hc_hct74.pdf" H 4750 1350 50  0001 C CNN
+	2    4750 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 1050 4750 950 
+Wire Wire Line
+	3150 1000 3150 1050
+Wire Wire Line
+	2850 1250 2600 1250
+Text Label 2600 1250 0    50   ~ 0
+d0
+$Comp
+L power:+5V #PWR05
+U 1 1 5D4838E6
+P 3150 1000
+F 0 "#PWR05" H 3150 850 50  0001 C CNN
+F 1 "+5V" H 3165 1173 50  0000 C CNN
+F 2 "" H 3150 1000 50  0001 C CNN
+F 3 "" H 3150 1000 50  0001 C CNN
+	1    3150 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR03
+U 1 1 5D48DDBE
+P 4750 850
+F 0 "#PWR03" H 4750 700 50  0001 C CNN
+F 1 "+5V" H 4765 1023 50  0000 C CNN
+F 2 "" H 4750 850 50  0001 C CNN
+F 3 "" H 4750 850 50  0001 C CNN
+	1    4750 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 1850 4900 1850
+Wire Wire Line
+	4900 1850 4900 1800
+Wire Wire Line
+	4750 1650 4750 1850
+$Comp
+L power:+5V #PWR08
+U 1 1 5D4A0CC5
+P 4900 1800
+F 0 "#PWR08" H 4900 1650 50  0001 C CNN
+F 1 "+5V" H 4915 1973 50  0000 C CNN
+F 2 "" H 4900 1800 50  0001 C CNN
+F 3 "" H 4900 1800 50  0001 C CNN
+	1    4900 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 1850 3300 1850
+Wire Wire Line
+	3300 1850 3300 1800
+Wire Wire Line
+	3150 1650 3150 1850
+$Comp
+L power:+5V #PWR07
+U 1 1 5D4A22AC
+P 3300 1800
+F 0 "#PWR07" H 3300 1650 50  0001 C CNN
+F 1 "+5V" H 3315 1973 50  0000 C CNN
+F 2 "" H 3300 1800 50  0001 C CNN
+F 3 "" H 3300 1800 50  0001 C CNN
+	1    3300 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5D4C33C0
+P 3900 1100
+F 0 "C1" H 3650 1100 50  0000 L CNN
+F 1 "220pF" H 3650 1000 50  0000 L CNN
+F 2 "musix5xxx-custom:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 3938 950 50  0001 C CNN
+F 3 "~" H 3900 1100 50  0001 C CNN
+	1    3900 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 1250 4450 1250
+Wire Wire Line
+	3900 950  4750 950 
+Connection ~ 4750 950 
+Wire Wire Line
+	4750 950  4750 850 
+$Comp
+L Device:R R1
+U 1 1 5D51044E
+P 3900 1500
+F 0 "R1" H 4100 1550 50  0000 R CNN
+F 1 "220" H 4150 1450 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3830 1500 50  0001 C CNN
+F 3 "~" H 3900 1500 50  0001 C CNN
+	1    3900 1500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3900 1350 3900 1250
+Connection ~ 3900 1250
+Wire Wire Line
+	3900 1650 3900 1900
+Wire Wire Line
+	3900 1900 5150 1900
+Wire Wire Line
+	5150 1900 5150 1450
+Wire Wire Line
+	5150 1450 5050 1450
+$Comp
+L 74xx:74LS75 IC2
+U 1 1 5D540692
+P 6500 1350
+F 0 "IC2" H 6750 2000 50  0000 C CNN
+F 1 "74HCT75" H 6750 1900 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-16_W7.62mm_LongPads" H 6500 1350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS75" H 6500 1350 50  0001 C CNN
+	1    6500 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS138 IC4
+U 1 1 5D542682
+P 10150 1350
+F 0 "IC4" H 10350 1950 50  0000 C CNN
+F 1 "74HCT138" H 10450 1850 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-16_W7.62mm_LongPads" H 10150 1350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS138" H 10150 1350 50  0001 C CNN
+	1    10150 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR02
+U 1 1 5D545552
+P 10150 750
+F 0 "#PWR02" H 10150 600 50  0001 C CNN
+F 1 "+5V" H 10165 923 50  0000 C CNN
+F 2 "" H 10150 750 50  0001 C CNN
+F 3 "" H 10150 750 50  0001 C CNN
+	1    10150 750 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR010
+U 1 1 5D547011
+P 10150 2050
+F 0 "#PWR010" H 10150 1800 50  0001 C CNN
+F 1 "GND" H 10155 1877 50  0000 C CNN
+F 2 "" H 10150 2050 50  0001 C CNN
+F 3 "" H 10150 2050 50  0001 C CNN
+	1    10150 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR01
+U 1 1 5D54BAAB
+P 6500 750
+F 0 "#PWR01" H 6500 600 50  0001 C CNN
+F 1 "+5V" H 6515 923 50  0000 C CNN
+F 2 "" H 6500 750 50  0001 C CNN
+F 3 "" H 6500 750 50  0001 C CNN
+	1    6500 750 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5D54C9FE
+P 6500 2050
+F 0 "#PWR09" H 6500 1800 50  0001 C CNN
+F 1 "GND" H 6505 1877 50  0000 C CNN
+F 2 "" H 6500 2050 50  0001 C CNN
+F 3 "" H 6500 2050 50  0001 C CNN
+	1    6500 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS32 IC3
+U 1 1 5D5CAE54
+P 8000 900
+F 0 "IC3" H 8000 1225 50  0000 C CNN
+F 1 "74HCT32" H 8000 1134 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 8000 900 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 8000 900 50  0001 C CNN
+	1    8000 900 
+	1    0    0    -1  
+$EndComp
+Text Label 7400 900  0    50   ~ 0
+R~W
+Wire Wire Line
+	7400 900  7650 900 
+Wire Wire Line
+	7650 800  7650 900 
+Wire Wire Line
+	7650 1000 7700 1000
+Wire Wire Line
+	7700 800  7650 800 
+Connection ~ 7650 900 
+Wire Wire Line
+	7650 900  7650 1000
+Wire Wire Line
+	8300 900  8350 900 
+Wire Wire Line
+	950  3950 1050 3950
+$Comp
+L 74xx:74LS32 IC3
+U 3 1 5D678158
+P 8000 1650
+F 0 "IC3" H 8000 1975 50  0000 C CNN
+F 1 "74HCT32" H 8000 1884 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 8000 1650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 8000 1650 50  0001 C CNN
+	3    8000 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 1550 7550 1550
+Wire Wire Line
+	7550 1750 7700 1750
+Text Label 7550 1750 0    50   ~ 0
+a7
+Text Label 7550 1550 0    50   ~ 0
+a6
+$Comp
+L 74xx:74LS32 IC3
+U 4 1 5D6A3DD9
+P 8750 1750
+F 0 "IC3" H 8750 2075 50  0000 C CNN
+F 1 "74HCT32" H 8750 1984 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 8750 1750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 8750 1750 50  0001 C CNN
+	4    8750 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8300 1650 8450 1650
+Wire Wire Line
+	7550 1850 8450 1850
+Text Label 7550 1850 0    50   ~ 0
+a5
+Wire Wire Line
+	9050 1750 9650 1750
+Wire Wire Line
+	9650 1650 9350 1650
+Text Label 9350 1650 0    50   ~ 0
+a4
+Wire Wire Line
+	10650 1550 10700 1550
+Wire Wire Line
+	10650 1450 10700 1450
+Wire Wire Line
+	10650 1650 10700 1650
+Text Label 9350 1250 0    50   ~ 0
+a3
+Wire Wire Line
+	9350 1250 9650 1250
+Text Label 9350 1150 0    50   ~ 0
+a2
+Wire Wire Line
+	9350 1150 9650 1150
+Text Label 9350 1050 0    50   ~ 0
+a1
+Wire Wire Line
+	9350 1050 9650 1050
+Wire Wire Line
+	7000 1450 7450 1450
+Wire Wire Line
+	7450 1450 7450 1250
+Wire Wire Line
+	7450 1250 9100 1250
+Wire Wire Line
+	9100 1250 9100 1550
+Wire Wire Line
+	9100 1550 9650 1550
+Wire Wire Line
+	6000 1050 5750 1050
+Wire Wire Line
+	6000 1150 5700 1150
+Wire Wire Line
+	6000 1250 5750 1250
+Text Label 5750 1250 0    50   ~ 0
+1MHZE
+Text Label 5750 1050 0    50   ~ 0
+~PGFC
+Wire Wire Line
+	5700 1350 5700 1150
+Wire Wire Line
+	5700 1350 6000 1350
+$Comp
+L power:+5V #PWR04
+U 1 1 5CD05EEA
+P 5700 850
+F 0 "#PWR04" H 5700 700 50  0001 C CNN
+F 1 "+5V" H 5715 1023 50  0000 C CNN
+F 2 "" H 5700 850 50  0001 C CNN
+F 3 "" H 5700 850 50  0001 C CNN
+	1    5700 850 
+	1    0    0    -1  
+$EndComp
+Connection ~ 5700 1150
+Wire Wire Line
+	5700 1150 5700 850 
+Wire Wire Line
+	6000 1650 5700 1650
+Wire Wire Line
+	5700 1650 5700 1350
+Connection ~ 5700 1350
+Wire Wire Line
+	6000 1550 5900 1550
+Wire Wire Line
+	5900 1550 5900 2300
+Wire Wire Line
+	5900 2300 7150 2300
+Wire Wire Line
+	7150 2300 7150 1650
+Wire Wire Line
+	7150 1650 7000 1650
+$Comp
+L 74xx:74LS32 IC3
+U 2 1 5CD30132
+P 8000 2400
+F 0 "IC3" H 8000 2725 50  0000 C CNN
+F 1 "74HCT32" H 8000 2634 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 8000 2400 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 8000 2400 50  0001 C CNN
+	2    8000 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 2300 7150 2300
+Connection ~ 7150 2300
+Wire Wire Line
+	7700 2500 7650 2500
+Wire Wire Line
+	7650 2500 7650 2600
+Wire Wire Line
+	7650 2600 8850 2600
+Wire Wire Line
+	10700 1750 10650 1750
+NoConn ~ 10650 1050
+NoConn ~ 10650 1150
+NoConn ~ 10650 1250
+NoConn ~ 10650 1350
+Wire Wire Line
+	2850 1350 2800 1350
+Wire Wire Line
+	8350 2400 8300 2400
+Wire Wire Line
+	7050 1250 7000 1250
+Wire Wire Line
+	4350 1350 4450 1350
+Wire Wire Line
+	5050 1250 5100 1250
+Text GLabel 5100 1250 2    50   Output ~ 0
+CLK-6850
+Text GLabel 950  4650 0    50   Input ~ 0
+CLK-6850
+Text GLabel 8350 900  2    50   Output ~ 0
+R~W~'
+Text GLabel 950  3950 0    50   Input ~ 0
+R~W~'
+Text GLabel 8350 2400 2    50   Output ~ 0
+CP1-1
+Text GLabel 2800 1350 0    50   Input ~ 0
+CP1-1
+Text GLabel 4350 1350 0    50   Input ~ 0
+CP2-1
+Text GLabel 7050 1250 2    50   Output ~ 0
+CP2-1
+Text GLabel 10700 1450 2    50   Output ~ 0
+CS2-1
+Text GLabel 10700 1550 2    50   Output ~ 0
+CS2-2
+Text GLabel 10700 1650 2    50   Output ~ 0
+CS2-3
+Text GLabel 950  4350 0    50   Input ~ 0
+CS2-1
+Wire Wire Line
+	950  4350 1050 4350
+Wire Wire Line
+	1000 4450 1000 4500
+Wire Wire Line
+	1000 4500 650  4500
+NoConn ~ 7000 1750
+NoConn ~ 7000 1350
+NoConn ~ 7000 1550
+NoConn ~ 7000 1150
+NoConn ~ 7000 1050
+Text Label 2550 3050 0    50   ~ 0
+d0
+Text Label 2550 3150 0    50   ~ 0
+d1
+Text Label 2550 3250 0    50   ~ 0
+d2
+Text Label 2550 3350 0    50   ~ 0
+d3
+Text Label 2550 3450 0    50   ~ 0
+d4
+Text Label 2550 3550 0    50   ~ 0
+d5
+Text Label 2550 3650 0    50   ~ 0
+d6
+Text Label 2550 3750 0    50   ~ 0
+d7
+Wire Wire Line
+	2250 4250 2250 4150
+Wire Wire Line
+	2250 4150 2250 4100
+Connection ~ 2250 4150
+$Comp
+L power:+5V #PWR017
+U 1 1 5CCDAFB4
+P 2250 4100
+F 0 "#PWR017" H 2250 3950 50  0001 C CNN
+F 1 "+5V" H 2265 4273 50  0000 C CNN
+F 2 "" H 2250 4100 50  0001 C CNN
+F 3 "" H 2250 4100 50  0001 C CNN
+	1    2250 4100
+	1    0    0    -1  
+$EndComp
+Text Label 2250 4500 0    50   ~ 0
+1MHZE
+Text Label 3750 3250 2    50   ~ 0
+~IRQ
+Text Label 2550 4050 0    50   ~ 0
+a0
+Wire Wire Line
+	2550 4950 2550 5050
+Connection ~ 2550 5050
+Wire Wire Line
+	2550 5050 2550 5150
+Wire Wire Line
+	2550 5150 2550 5350
+Connection ~ 2550 5150
+$Comp
+L power:GND #PWR022
+U 1 1 5CCDAFC2
+P 2550 5350
+F 0 "#PWR022" H 2550 5100 50  0001 C CNN
+F 1 "GND" H 2555 5177 50  0000 C CNN
+F 2 "" H 2550 5350 50  0001 C CNN
+F 3 "" H 2550 5350 50  0001 C CNN
+	1    2550 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 4750 2650 4650
+Connection ~ 2650 4650
+Wire Wire Line
+	2650 4650 2600 4650
+$Comp
+L Connector:DIN-5_180degree J6
+U 1 1 5CCDAFCB
+P 3300 6600
+F 0 "J6" H 3300 6325 50  0000 C CNN
+F 1 "OUT 2" H 3300 6234 50  0000 C CNN
+F 2 "musix5xxx-custom:din_5_pcb_mount" H 3300 6600 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 3300 6600 50  0001 C CNN
+	1    3300 6600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 6500 3650 6500
+Wire Wire Line
+	3300 6300 3300 6100
+Wire Wire Line
+	3300 6100 3450 6100
+Wire Wire Line
+	3450 6100 3450 6150
+$Comp
+L power:GND #PWR032
+U 1 1 5CCDAFD5
+P 3450 6150
+F 0 "#PWR032" H 3450 5900 50  0001 C CNN
+F 1 "GND" H 3455 5977 50  0000 C CNN
+F 2 "" H 3450 6150 50  0001 C CNN
+F 3 "" H 3450 6150 50  0001 C CNN
+	1    3450 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 5CCDAFDB
+P 2950 6200
+F 0 "R10" H 3150 6250 50  0000 R CNN
+F 1 "220" H 3150 6150 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2880 6200 50  0001 C CNN
+F 3 "~" H 2950 6200 50  0001 C CNN
+	1    2950 6200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 6500 2950 6500
+Wire Wire Line
+	2950 6500 2950 6350
+$Comp
+L power:+5V #PWR029
+U 1 1 5CCDAFE3
+P 2950 6000
+F 0 "#PWR029" H 2950 5850 50  0001 C CNN
+F 1 "+5V" H 2965 6173 50  0000 C CNN
+F 2 "" H 2950 6000 50  0001 C CNN
+F 3 "" H 2950 6000 50  0001 C CNN
+	1    2950 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 6000 2950 6050
+NoConn ~ 3600 6600
+NoConn ~ 3000 6600
+Wire Wire Line
+	3650 6500 3650 6350
+Wire Wire Line
+	2700 4150 2250 4150
+Wire Wire Line
+	3750 3250 3600 3250
+Wire Wire Line
+	3600 4950 3650 4950
+NoConn ~ 3600 5050
+Wire Wire Line
+	2700 4750 2650 4750
+Wire Wire Line
+	2700 4650 2650 4650
+Wire Wire Line
+	2550 5150 2700 5150
+Wire Wire Line
+	2700 5050 2550 5050
+Wire Wire Line
+	2700 3050 2550 3050
+Wire Wire Line
+	2700 3150 2550 3150
+Wire Wire Line
+	2700 3250 2550 3250
+Wire Wire Line
+	2700 4950 2550 4950
+Wire Wire Line
+	2700 3350 2550 3350
+Wire Wire Line
+	2700 3450 2550 3450
+Wire Wire Line
+	2700 3550 2550 3550
+Wire Wire Line
+	2700 3650 2550 3650
+Wire Wire Line
+	2700 3750 2550 3750
+Wire Wire Line
+	2650 4450 2700 4450
+$Comp
+L power:+5V #PWR013
+U 1 1 5CCDAFFF
+P 3200 2850
+F 0 "#PWR013" H 3200 2700 50  0001 C CNN
+F 1 "+5V" H 3215 3023 50  0000 C CNN
+F 2 "" H 3200 2850 50  0001 C CNN
+F 3 "" H 3200 2850 50  0001 C CNN
+	1    3200 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 4050 2700 4050
+Wire Wire Line
+	2700 4250 2250 4250
+$Comp
+L power:GND #PWR023
+U 1 1 5CCDB007
+P 3200 5350
+F 0 "#PWR023" H 3200 5100 50  0001 C CNN
+F 1 "GND" H 3205 5177 50  0000 C CNN
+F 2 "" H 3200 5350 50  0001 C CNN
+F 3 "" H 3200 5350 50  0001 C CNN
+	1    3200 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R11
+U 1 1 5CCDB00D
+P 3650 6200
+F 0 "R11" H 3850 6250 50  0000 R CNN
+F 1 "220" H 3850 6150 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3580 6200 50  0001 C CNN
+F 3 "~" H 3650 6200 50  0001 C CNN
+	1    3650 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_UART:MC6850 IC7
+U 1 1 5CCDB013
+P 3200 4150
+F 0 "IC7" H 3400 5550 50  0000 C CNN
+F 1 "MC6850" H 3450 5450 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-24_W15.24mm_LongPads" H 3250 3000 50  0001 L CNN
+F 3 "http://pdf.datasheetcatalog.com/datasheet/motorola/MC6850.pdf" H 3200 4150 50  0001 C CNN
+	1    3200 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 6050 3650 6000
+$Comp
+L 74xx:74LS08 IC5
+U 2 1 5CCDB01A
+P 3650 5700
+F 0 "IC5" H 3650 6025 50  0000 C CNN
+F 1 "74HCT08" H 3650 5934 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 3650 5700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 3650 5700 50  0001 C CNN
+	2    3650 5700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3550 5350 3550 5400
+Wire Wire Line
+	3750 5400 3750 5350
+Wire Wire Line
+	3650 4950 3650 5350
+Wire Wire Line
+	3550 5350 3650 5350
+Connection ~ 3650 5350
+Wire Wire Line
+	3650 5350 3750 5350
+Wire Wire Line
+	2550 3950 2700 3950
+Text GLabel 2600 4650 0    50   Input ~ 0
+CLK-6850
+Text GLabel 2550 3950 0    50   Input ~ 0
+R~W~'
+Text GLabel 2550 4350 0    50   Input ~ 0
+CS2-2
+Wire Wire Line
+	2550 4350 2700 4350
+Wire Wire Line
+	2650 4450 2650 4500
+Wire Wire Line
+	2650 4500 2250 4500
+Text Label 5000 3050 0    50   ~ 0
+d0
+Text Label 5000 3150 0    50   ~ 0
+d1
+Text Label 5000 3250 0    50   ~ 0
+d2
+Text Label 5000 3350 0    50   ~ 0
+d3
+Text Label 5000 3450 0    50   ~ 0
+d4
+Text Label 5000 3550 0    50   ~ 0
+d5
+Text Label 5000 3650 0    50   ~ 0
+d6
+Text Label 5000 3750 0    50   ~ 0
+d7
+$Comp
+L power:+5V #PWR019
+U 1 1 5CD3DDE6
+P 4700 4100
+F 0 "#PWR019" H 4700 3950 50  0001 C CNN
+F 1 "+5V" H 4715 4273 50  0000 C CNN
+F 2 "" H 4700 4100 50  0001 C CNN
+F 3 "" H 4700 4100 50  0001 C CNN
+	1    4700 4100
+	1    0    0    -1  
+$EndComp
+Text Label 4700 4500 0    50   ~ 0
+1MHZE
+Text Label 6200 3250 2    50   ~ 0
+~IRQ
+Text Label 5000 4050 0    50   ~ 0
+a0
+Wire Wire Line
+	5100 5050 5100 5150
+Wire Wire Line
+	5100 5150 5100 5350
+Connection ~ 5100 5150
+$Comp
+L power:GND #PWR024
+U 1 1 5CD3DDF4
+P 5100 5350
+F 0 "#PWR024" H 5100 5100 50  0001 C CNN
+F 1 "GND" H 5105 5177 50  0000 C CNN
+F 2 "" H 5100 5350 50  0001 C CNN
+F 3 "" H 5100 5350 50  0001 C CNN
+	1    5100 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 4750 5100 4650
+Connection ~ 5100 4650
+Wire Wire Line
+	5100 4650 5050 4650
+$Comp
+L Connector:DIN-5_180degree J7
+U 1 1 5CD3DDFD
+P 5800 6600
+F 0 "J7" H 5800 6325 50  0000 C CNN
+F 1 "OUT 3" H 5800 6234 50  0000 C CNN
+F 2 "musix5xxx-custom:din_5_pcb_mount" H 5800 6600 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 5800 6600 50  0001 C CNN
+	1    5800 6600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 6500 6150 6500
+Wire Wire Line
+	5800 6300 5800 6100
+Wire Wire Line
+	5800 6100 5900 6100
+Wire Wire Line
+	5900 6100 5900 6150
+$Comp
+L power:GND #PWR033
+U 1 1 5CD3DE07
+P 5900 6150
+F 0 "#PWR033" H 5900 5900 50  0001 C CNN
+F 1 "GND" H 5905 5977 50  0000 C CNN
+F 2 "" H 5900 6150 50  0001 C CNN
+F 3 "" H 5900 6150 50  0001 C CNN
+	1    5900 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R12
+U 1 1 5CD3DE0D
+P 5450 6100
+F 0 "R12" H 5650 6150 50  0000 R CNN
+F 1 "220" H 5650 6050 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5380 6100 50  0001 C CNN
+F 3 "~" H 5450 6100 50  0001 C CNN
+	1    5450 6100
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 6500 5450 6500
+Wire Wire Line
+	5450 6500 5450 6250
+$Comp
+L power:+5V #PWR030
+U 1 1 5CD3DE15
+P 5450 5850
+F 0 "#PWR030" H 5450 5700 50  0001 C CNN
+F 1 "+5V" H 5465 6023 50  0000 C CNN
+F 2 "" H 5450 5850 50  0001 C CNN
+F 3 "" H 5450 5850 50  0001 C CNN
+	1    5450 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 5850 5450 5950
+NoConn ~ 6100 6600
+NoConn ~ 5500 6600
+Wire Wire Line
+	6150 6500 6150 6250
+Wire Wire Line
+	5150 4150 4700 4150
+Wire Wire Line
+	6200 3250 6050 3250
+NoConn ~ 6050 5050
+Wire Wire Line
+	5150 4750 5100 4750
+Wire Wire Line
+	5150 4650 5100 4650
+Wire Wire Line
+	5100 5150 5150 5150
+Wire Wire Line
+	5150 5050 5100 5050
+Wire Wire Line
+	5150 3050 5000 3050
+Wire Wire Line
+	5150 3150 5000 3150
+Wire Wire Line
+	5150 3250 5000 3250
+Wire Wire Line
+	5150 3350 5000 3350
+Wire Wire Line
+	5150 3450 5000 3450
+Wire Wire Line
+	5150 3550 5000 3550
+Wire Wire Line
+	5150 3650 5000 3650
+Wire Wire Line
+	5150 3750 5000 3750
+Wire Wire Line
+	5100 4450 5150 4450
+$Comp
+L power:+5V #PWR014
+U 1 1 5CD3DE31
+P 5650 2850
+F 0 "#PWR014" H 5650 2700 50  0001 C CNN
+F 1 "+5V" H 5665 3023 50  0000 C CNN
+F 2 "" H 5650 2850 50  0001 C CNN
+F 3 "" H 5650 2850 50  0001 C CNN
+	1    5650 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 4050 5150 4050
+Wire Wire Line
+	5150 4250 4700 4250
+$Comp
+L power:GND #PWR025
+U 1 1 5CD3DE39
+P 5650 5350
+F 0 "#PWR025" H 5650 5100 50  0001 C CNN
+F 1 "GND" H 5655 5177 50  0000 C CNN
+F 2 "" H 5650 5350 50  0001 C CNN
+F 3 "" H 5650 5350 50  0001 C CNN
+	1    5650 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 5CD3DE3F
+P 6150 6100
+F 0 "R13" H 6350 6150 50  0000 R CNN
+F 1 "220" H 6350 6050 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6080 6100 50  0001 C CNN
+F 3 "~" H 6150 6100 50  0001 C CNN
+	1    6150 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_UART:MC6850 IC8
+U 1 1 5CD3DE45
+P 5650 4150
+F 0 "IC8" H 5850 5550 50  0000 C CNN
+F 1 "MC6850" H 5900 5450 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-24_W15.24mm_LongPads" H 5700 3000 50  0001 L CNN
+F 3 "http://pdf.datasheetcatalog.com/datasheet/motorola/MC6850.pdf" H 5650 4150 50  0001 C CNN
+	1    5650 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 5950 6150 5900
+$Comp
+L 74xx:74LS08 IC5
+U 3 1 5CD3DE4C
+P 6150 5600
+F 0 "IC5" H 6150 5925 50  0000 C CNN
+F 1 "74HCT08" H 6150 5834 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 6150 5600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 6150 5600 50  0001 C CNN
+	3    6150 5600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6050 5200 6050 5300
+Wire Wire Line
+	5000 3950 5150 3950
+Text GLabel 5050 4650 0    50   Input ~ 0
+CLK-6850
+Text GLabel 5000 3950 0    50   Input ~ 0
+R~W~'
+Text GLabel 5000 4350 0    50   Input ~ 0
+CS2-3
+Wire Wire Line
+	5000 4350 5150 4350
+Wire Wire Line
+	5100 4450 5100 4500
+Wire Wire Line
+	5100 4500 4700 4500
+$Comp
+L music5xxx-custom:6N137 IC9
+U 1 1 5CD5DBC2
+P 4550 6150
+F 0 "IC9" V 4700 6600 50  0000 C CNN
+F 1 "6N137" V 4600 6650 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-8_W7.62mm_LongPads" H 4840 5850 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/HCPL2731-D.pdf" H 4840 5850 50  0001 C CNN
+	1    4550 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R14
+U 1 1 5CD5E926
+P 4200 6850
+F 0 "R14" H 4400 6900 50  0000 R CNN
+F 1 "220" H 4400 6800 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4130 6850 50  0001 C CNN
+F 3 "~" H 4200 6850 50  0001 C CNN
+	1    4200 6850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:D_ALT D5
+U 1 1 5CD5FE2C
+P 4550 6600
+F 0 "D5" H 4550 6800 50  0000 C CNN
+F 1 "4148" H 4550 6700 50  0000 C CNN
+F 2 "musix5xxx-custom:D_DO-35_SOD27_P10.16mm_Horizontal" H 4550 6600 50  0001 C CNN
+F 3 "~" H 4550 6600 50  0001 C CNN
+	1    4550 6600
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector:DIN-5_180degree J8
+U 1 1 5CD86ACA
+P 4550 7200
+F 0 "J8" H 4550 6925 50  0000 C CNN
+F 1 "IN" H 4550 6834 50  0000 C CNN
+F 2 "musix5xxx-custom:din_5_pcb_mount" H 4550 7200 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 4550 7200 50  0001 C CNN
+	1    4550 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 5300 6250 5200
+Wire Wire Line
+	6150 5200 6250 5200
+Wire Wire Line
+	6050 5200 6150 5200
+Connection ~ 6150 5200
+Wire Wire Line
+	6050 4950 6150 4950
+Wire Wire Line
+	6150 4950 6150 5200
+Wire Wire Line
+	4200 7000 4200 7100
+Wire Wire Line
+	4200 7100 4250 7100
+Wire Wire Line
+	4850 7100 4850 6600
+Wire Wire Line
+	4200 6700 4200 6600
+Wire Wire Line
+	4200 6600 4400 6600
+Wire Wire Line
+	4700 6600 4850 6600
+Connection ~ 4200 6600
+Wire Wire Line
+	4750 5850 4750 5800
+Wire Wire Line
+	4750 5800 5050 5800
+$Comp
+L power:+5V #PWR026
+U 1 1 5CF99DC8
+P 4250 5450
+F 0 "#PWR026" H 4250 5300 50  0001 C CNN
+F 1 "+5V" H 4265 5623 50  0000 C CNN
+F 2 "" H 4250 5450 50  0001 C CNN
+F 3 "" H 4250 5450 50  0001 C CNN
+	1    4250 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 5CF9AC19
+P 4450 5500
+F 0 "R6" V 4650 5550 50  0000 R CNN
+F 1 "10K" V 4550 5550 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4380 5500 50  0001 C CNN
+F 3 "~" H 4450 5500 50  0001 C CNN
+	1    4450 5500
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4650 5500 4650 5850
+Wire Wire Line
+	4850 6600 4850 6500
+Wire Wire Line
+	4850 6500 4650 6500
+Wire Wire Line
+	4650 6500 4650 6450
+Connection ~ 4850 6600
+Wire Wire Line
+	4200 6500 4450 6500
+Wire Wire Line
+	4450 6500 4450 6450
+Wire Wire Line
+	4200 6500 4200 6600
+NoConn ~ 4850 7200
+NoConn ~ 4250 7200
+NoConn ~ 4550 6900
+Wire Wire Line
+	4600 5500 4650 5500
+Wire Wire Line
+	4350 5850 4350 5650
+Wire Wire Line
+	4350 5650 4250 5650
+Wire Wire Line
+	5050 5800 5050 5850
+Wire Wire Line
+	4250 5650 4250 5500
+Wire Wire Line
+	4250 5500 4300 5500
+Connection ~ 4650 5500
+Wire Wire Line
+	4700 4100 4700 4150
+Connection ~ 4700 4150
+Wire Wire Line
+	4700 4150 4700 4250
+$Comp
+L power:GND #PWR027
+U 1 1 5CF9A630
+P 5050 5850
+F 0 "#PWR027" H 5050 5600 50  0001 C CNN
+F 1 "GND" H 5055 5677 50  0000 C CNN
+F 2 "" H 5050 5850 50  0001 C CNN
+F 3 "" H 5050 5850 50  0001 C CNN
+	1    5050 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 4950 5150 4950
+Wire Wire Line
+	4650 4950 4650 5500
+Connection ~ 8400 6200
+Wire Wire Line
+	7900 6200 7900 6150
+Wire Wire Line
+	8400 6200 7900 6200
+Connection ~ 8400 5100
+Wire Wire Line
+	7900 5100 7900 5150
+$Comp
+L 74xx:74LS08 IC5
+U 5 1 5D05717D
+P 7900 5650
+F 0 "IC5" H 7900 5700 50  0000 C CNN
+F 1 "74HCT08" H 7900 5600 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 7900 5650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 7900 5650 50  0001 C CNN
+	5    7900 5650
+	1    0    0    -1  
+$EndComp
+Connection ~ 9250 6200
+Wire Wire Line
+	9250 6200 8900 6200
+Connection ~ 9250 5100
+Wire Wire Line
+	9250 5100 8900 5100
+Wire Wire Line
+	9250 6200 9500 6200
+Wire Wire Line
+	9250 5800 9250 6200
+Connection ~ 9500 5100
+Wire Wire Line
+	9250 5100 9250 5500
+Wire Wire Line
+	9500 5100 9250 5100
+Wire Wire Line
+	9750 5100 10000 5100
+Connection ~ 9750 5100
+Wire Wire Line
+	9750 5500 9750 5100
+Wire Wire Line
+	10000 5100 10250 5100
+Connection ~ 10000 5100
+Wire Wire Line
+	10000 5500 10000 5100
+Wire Wire Line
+	10250 5100 10500 5100
+Connection ~ 10250 5100
+Wire Wire Line
+	10250 5100 10250 5500
+Wire Wire Line
+	10500 5100 10500 5500
+Wire Wire Line
+	9500 5100 9750 5100
+Wire Wire Line
+	9500 5500 9500 5100
+Connection ~ 10250 6200
+Wire Wire Line
+	10250 6200 10250 5800
+Connection ~ 10000 6200
+Wire Wire Line
+	10500 6200 10500 5800
+Wire Wire Line
+	10000 6200 10250 6200
+Connection ~ 9750 6200
+Wire Wire Line
+	10000 6200 10000 5800
+Wire Wire Line
+	9750 6200 10000 6200
+Wire Wire Line
+	9500 6200 9500 5800
+Connection ~ 9500 6200
+Wire Wire Line
+	9750 6200 9750 5800
+Wire Wire Line
+	9500 6200 9750 6200
+Wire Wire Line
+	7400 6250 7400 6200
+$Comp
+L power:GND #PWR034
+U 1 1 5CF76A5F
+P 7400 6250
+F 0 "#PWR034" H 7400 6000 50  0001 C CNN
+F 1 "GND" H 7405 6077 50  0000 C CNN
+F 2 "" H 7400 6250 50  0001 C CNN
+F 3 "" H 7400 6250 50  0001 C CNN
+	1    7400 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C8
+U 1 1 5CF75EE8
+P 10500 5650
+F 0 "C8" H 10500 5500 50  0000 L CNN
+F 1 "0.1uF" H 10500 5400 50  0000 L CNN
+F 2 "musix5xxx-custom:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 10538 5500 50  0001 C CNN
+F 3 "~" H 10500 5650 50  0001 C CNN
+	1    10500 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C7
+U 1 1 5CF75A2D
+P 10250 5650
+F 0 "C7" H 10250 5500 50  0000 L CNN
+F 1 "0.1uF" H 10250 5400 50  0000 L CNN
+F 2 "musix5xxx-custom:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 10288 5500 50  0001 C CNN
+F 3 "~" H 10250 5650 50  0001 C CNN
+	1    10250 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5CF75656
+P 10000 5650
+F 0 "C6" H 10000 5500 50  0000 L CNN
+F 1 "0.1uF" H 10000 5400 50  0000 L CNN
+F 2 "musix5xxx-custom:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 10038 5500 50  0001 C CNN
+F 3 "~" H 10000 5650 50  0001 C CNN
+	1    10000 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 5CF75191
+P 9750 5650
+F 0 "C5" H 9750 5500 50  0000 L CNN
+F 1 "0.1uF" H 9750 5400 50  0000 L CNN
+F 2 "musix5xxx-custom:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 9788 5500 50  0001 C CNN
+F 3 "~" H 9750 5650 50  0001 C CNN
+	1    9750 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5CF74D8F
+P 9500 5650
+F 0 "C4" H 9500 5500 50  0000 L CNN
+F 1 "0.1uF" H 9500 5400 50  0000 L CNN
+F 2 "musix5xxx-custom:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 9538 5500 50  0001 C CNN
+F 3 "~" H 9500 5650 50  0001 C CNN
+	1    9500 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5D701948
+P 9250 5650
+F 0 "C3" H 9250 5500 50  0000 L CNN
+F 1 "0.1uF" H 9250 5400 50  0000 L CNN
+F 2 "musix5xxx-custom:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 9288 5500 50  0001 C CNN
+F 3 "~" H 9250 5650 50  0001 C CNN
+	1    9250 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 5100 7400 5050
+$Comp
+L power:+5V #PWR018
+U 1 1 5D777B4D
+P 7400 5050
+F 0 "#PWR018" H 7400 4900 50  0001 C CNN
+F 1 "+5V" H 7415 5223 50  0000 C CNN
+F 2 "" H 7400 5050 50  0001 C CNN
+F 3 "" H 7400 5050 50  0001 C CNN
+	1    7400 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 5150 8900 5100
+Connection ~ 8900 5100
+Wire Wire Line
+	8900 5100 8400 5100
+Wire Wire Line
+	8900 6150 8900 6200
+Connection ~ 8900 6200
+Wire Wire Line
+	8900 6200 8400 6200
+Wire Wire Line
+	8850 2600 8850 2300
+Wire Wire Line
+	8850 2300 10700 2300
+Wire Wire Line
+	10700 2300 10700 1750
+Text GLabel 9300 2850 0    50   Input ~ 0
+TX1
+$Comp
+L Device:LED_ALT D2
+U 1 1 5DE0574A
+P 10600 3400
+F 0 "D2" H 10650 3100 50  0000 R CNN
+F 1 "MIDI 2" H 10650 3200 50  0000 R CNN
+F 2 "musix5xxx-custom:LED_D3.0mm" H 10600 3400 50  0001 C CNN
+F 3 "~" H 10600 3400 50  0001 C CNN
+	1    10600 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10400 3400 10450 3400
+$Comp
+L Device:R R3
+U 1 1 5DE05751
+P 10250 3400
+F 0 "R3" V 10500 3450 50  0000 R CNN
+F 1 "330" V 10400 3450 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10180 3400 50  0001 C CNN
+F 3 "~" H 10250 3400 50  0001 C CNN
+	1    10250 3400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10100 3400 10050 3400
+Text GLabel 9300 3400 0    50   Input ~ 0
+TX2
+$Comp
+L Device:LED_ALT D3
+U 1 1 5DE77146
+P 10600 3950
+F 0 "D3" H 10650 3650 50  0000 R CNN
+F 1 "MIDI 3" H 10650 3750 50  0000 R CNN
+F 2 "musix5xxx-custom:LED_D3.0mm" H 10600 3950 50  0001 C CNN
+F 3 "~" H 10600 3950 50  0001 C CNN
+	1    10600 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10400 3950 10450 3950
+$Comp
+L Device:R R4
+U 1 1 5DE7714D
+P 10250 3950
+F 0 "R4" V 10500 4000 50  0000 R CNN
+F 1 "330" V 10400 4000 50  0000 R CNN
+F 2 "musix5xxx-custom:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10180 3950 50  0001 C CNN
+F 3 "~" H 10250 3950 50  0001 C CNN
+	1    10250 3950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10100 3950 10050 3950
+Text GLabel 9300 3950 0    50   Input ~ 0
+TX3
+Wire Wire Line
+	10750 2850 10850 2850
+Wire Wire Line
+	10850 2850 10850 3400
+Wire Wire Line
+	10750 3400 10850 3400
+Wire Wire Line
+	10850 3400 10850 3950
+Wire Wire Line
+	10750 3950 10850 3950
+Connection ~ 10850 3400
+Wire Wire Line
+	6900 5100 7050 5100
+Connection ~ 7900 5100
+Wire Wire Line
+	7050 5800 7050 6200
+Wire Wire Line
+	7050 6200 7400 6200
+Connection ~ 7900 6200
+Wire Wire Line
+	2600 1700 2700 1700
+Wire Wire Line
+	2700 1700 2700 1800
+$Comp
+L power:GND #PWR06
+U 1 1 5E27EE74
+P 2700 1800
+F 0 "#PWR06" H 2700 1550 50  0001 C CNN
+F 1 "GND" H 2705 1627 50  0000 C CNN
+F 2 "" H 2700 1800 50  0001 C CNN
+F 3 "" H 2700 1800 50  0001 C CNN
+	1    2700 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 5100 7900 4800
+Wire Wire Line
+	7900 4800 7950 4800
+Wire Wire Line
+	8700 4800 8700 4850
+Wire Wire Line
+	8600 4800 8700 4800
+Wire Wire Line
+	8250 4800 8300 4800
+Wire Wire Line
+	8400 6200 8400 6150
+Wire Wire Line
+	8400 5100 8400 5150
+$Comp
+L 74xx:74LS32 IC3
+U 5 1 5E5019D9
+P 8400 5650
+F 0 "IC3" H 8400 5700 50  0000 C CNN
+F 1 "74HCT32" H 8400 5600 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 8400 5650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS32" H 8400 5650 50  0001 C CNN
+	5    8400 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS08 IC5
+U 4 1 5E54BE9C
+P 2750 7300
+F 0 "IC5" H 2750 7625 50  0000 C CNN
+F 1 "74HCT08" H 2750 7534 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 2750 7300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 2750 7300 50  0001 C CNN
+	4    2750 7300
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3050 7300
+Wire Wire Line
+	2450 7200 2350 7200
+Wire Wire Line
+	2350 7200 2350 7400
+Wire Wire Line
+	2350 7400 2450 7400
+Connection ~ 2350 7400
+Wire Wire Line
+	2350 7400 2350 7450
+$Comp
+L power:GND #PWR035
+U 1 1 5E5B91F1
+P 2350 7450
+F 0 "#PWR035" H 2350 7200 50  0001 C CNN
+F 1 "GND" H 2355 7277 50  0000 C CNN
+F 2 "" H 2350 7450 50  0001 C CNN
+F 3 "" H 2350 7450 50  0001 C CNN
+	1    2350 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS74 IC1
+U 3 1 5E5C5202
+P 7400 5650
+F 0 "IC1" H 7400 5700 50  0000 C CNN
+F 1 "74HCT74" H 7400 5600 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 7400 5650 50  0001 C CNN
+F 3 "74xx/74hc_hct74.pdf" H 7400 5650 50  0001 C CNN
+	3    7400 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 5450 4250 5500
+Connection ~ 4250 5500
+Wire Wire Line
+	7400 5250 7400 5100
+Connection ~ 7400 5100
+Wire Wire Line
+	7400 5100 7900 5100
+Wire Wire Line
+	7400 6050 7400 6200
+Connection ~ 7400 6200
+Wire Wire Line
+	7400 6200 7900 6200
+Text GLabel 6200 4950 2    50   Output ~ 0
+TX3
+Wire Wire Line
+	6200 4950 6150 4950
+Connection ~ 6150 4950
+Text GLabel 3700 4950 2    50   Output ~ 0
+TX2
+Wire Wire Line
+	3700 4950 3650 4950
+Connection ~ 3650 4950
+Text GLabel 2050 4950 2    50   Output ~ 0
+TX1
+Wire Wire Line
+	2050 4950 2000 4950
+Connection ~ 2000 4950
+$Comp
+L Device:C C9
+U 1 1 5CF438F8
+P 10750 5650
+F 0 "C9" H 10750 5500 50  0000 L CNN
+F 1 "0.1uF" H 10750 5400 50  0000 L CNN
+F 2 "musix5xxx-custom:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 10788 5500 50  0001 C CNN
+F 3 "~" H 10750 5650 50  0001 C CNN
+	1    10750 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10500 5100 10750 5100
+Wire Wire Line
+	10750 5100 10750 5500
+Wire Wire Line
+	10250 6200 10500 6200
+Wire Wire Line
+	10750 5800 10750 6200
+Connection ~ 10500 5100
+Connection ~ 10500 6200
+Wire Wire Line
+	10500 6200 10750 6200
+$Comp
+L 74xx:74LS08 IC10
+U 5 1 5CF6A7A5
+P 8900 5650
+F 0 "IC10" H 8900 5700 50  0000 C CNN
+F 1 "74HCT08" H 8900 5600 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 8900 5650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 8900 5650 50  0001 C CNN
+	5    8900 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS08 IC10
+U 3 1 5CF6E93C
+P 9750 3950
+F 0 "IC10" H 9750 4275 50  0000 C CNN
+F 1 "74HCT08" H 9750 4184 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 9750 3950 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 9750 3950 50  0001 C CNN
+	3    9750 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS08 IC10
+U 2 1 5CF7637A
+P 9750 3400
+F 0 "IC10" H 9750 3725 50  0000 C CNN
+F 1 "74HCT08" H 9750 3634 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 9750 3400 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 9750 3400 50  0001 C CNN
+	2    9750 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS08 IC10
+U 1 1 5CF7D037
+P 9750 2850
+F 0 "IC10" H 9750 3175 50  0000 C CNN
+F 1 "74HCT08" H 9750 3084 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 9750 2850 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 9750 2850 50  0001 C CNN
+	1    9750 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS08 IC10
+U 4 1 5CF867DF
+P 9750 4500
+F 0 "IC10" H 9750 4825 50  0000 C CNN
+F 1 "74HCT08" H 9750 4734 50  0000 C CNN
+F 2 "musix5xxx-custom:DIP-14_W7.62mm_LongPads" H 9750 4500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS08" H 9750 4500 50  0001 C CNN
+	4    9750 4500
+	1    0    0    -1  
+$EndComp
+NoConn ~ 10050 4500
+Wire Wire Line
+	9450 4400 9400 4400
+Wire Wire Line
+	9400 4400 9400 4500
+Wire Wire Line
+	9400 4600 9450 4600
+Wire Wire Line
+	9400 4500 9250 4500
+$Comp
+L power:GND #PWR036
+U 1 1 5CF867EB
+P 9250 4500
+F 0 "#PWR036" H 9250 4250 50  0001 C CNN
+F 1 "GND" H 9255 4327 50  0000 C CNN
+F 2 "" H 9250 4500 50  0001 C CNN
+F 3 "" H 9250 4500 50  0001 C CNN
+	1    9250 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 5100 8400 5100
+Wire Wire Line
+	9400 2850 9400 2750
+Wire Wire Line
+	9400 2750 9450 2750
+Wire Wire Line
+	9300 2850 9400 2850
+Wire Wire Line
+	9400 2850 9400 2950
+Wire Wire Line
+	9400 2950 9450 2950
+Connection ~ 9400 2850
+Wire Wire Line
+	9400 3400 9400 3300
+Wire Wire Line
+	9400 3300 9450 3300
+Wire Wire Line
+	9300 3400 9400 3400
+Wire Wire Line
+	9400 3400 9400 3500
+Wire Wire Line
+	9400 3500 9450 3500
+Connection ~ 9400 3400
+Wire Wire Line
+	9400 3950 9400 3850
+Wire Wire Line
+	9400 3850 9450 3850
+Wire Wire Line
+	9300 3950 9400 3950
+Wire Wire Line
+	9400 3950 9400 4050
+Wire Wire Line
+	9400 4050 9450 4050
+Connection ~ 9400 3950
+Connection ~ 9400 4500
+Wire Wire Line
+	9400 4500 9400 4600
+Connection ~ 7050 5100
+Wire Wire Line
+	7050 5100 7400 5100
+Wire Wire Line
+	7050 5100 7050 5500
+Wire Wire Line
+	6900 5200 6950 5200
+Wire Wire Line
+	6950 5200 6950 5250
+$Comp
+L power:GND #PWR0101
+U 1 1 5D5AE743
+P 6950 5250
+F 0 "#PWR0101" H 6950 5000 50  0001 C CNN
+F 1 "GND" H 6955 5077 50  0000 C CNN
+F 2 "" H 6950 5250 50  0001 C CNN
+F 3 "" H 6950 5250 50  0001 C CNN
+	1    6950 5250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0102
+U 1 1 5CF3A583
+P 10850 2700
+F 0 "#PWR0102" H 10850 2550 50  0001 C CNN
+F 1 "+5V" H 10865 2873 50  0000 C CNN
+F 2 "" H 10850 2700 50  0001 C CNN
+F 3 "" H 10850 2700 50  0001 C CNN
+	1    10850 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10850 2850 10850 2700
+Connection ~ 10850 2850
+$Comp
+L Device:C C10
+U 1 1 5CE54C2C
+P 11000 5650
+F 0 "C10" H 11000 5500 50  0000 L CNN
+F 1 "0.1uF" H 11000 5400 50  0000 L CNN
+F 2 "musix5xxx-custom:C_Disc_D3.4mm_W2.1mm_P2.50mm" H 11038 5500 50  0001 C CNN
+F 3 "~" H 11000 5650 50  0001 C CNN
+	1    11000 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10750 5100 11000 5100
+Wire Wire Line
+	11000 5100 11000 5500
+Wire Wire Line
+	11000 5800 11000 6200
+Wire Wire Line
+	10750 6200 11000 6200
+Connection ~ 10750 5100
+Connection ~ 10750 6200
+$EndSCHEMATC
