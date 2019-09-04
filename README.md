@@ -8,12 +8,23 @@ The Music 2000 Midi interface combined with the AMPLE programming language and t
 Despite having an on-board Midi input port, AMPLE and the Hybrid System cannot use it directly. It is assumed that the Hybrid system is used as a controller and sequencer. However, it is possible to address the interface from user programs.
 
 ## The clone
-
 ![music5xxx PCB render](https://github.com/jasonl-beeb/music2xxx/raw/master/images/music2xxx-render.png)
 
 It is designed in Kicad, based upon Colin Fraser's reverse-engineered schematic. http://www.colinfraser.com/m5000/m2000sch.pdf This version uses a different opto-isolator on the Midi input, and implements activity LEDs for the Midi outputs. 
 
 Currently all the 74xx series logic ICs are available new. The 6850 UART ICs are no longer manufactured, but are commonly available second-hand or new-old-stock. 
+
+4/9/19 For standalone use, an optional LM7805 regulator is added to allow powering the board from 9V-12V, as well as an LED to show input activity. A few prototype PCBs have been ordered.
+
+## Using outside the Hybrid system
+
+It's possible to use the m2000 Midi interface in BASIC or machine code - the 6850 Uarts can be read to or written to at addresses: 
+
+* FC08/9 ACIA 1 (MIDI OUT 1)
+* FC0A/B ACIA 2 (MIDI OUT 2)
+* FC0C/D ACIA 3 (MIDI OUT 3, MIDI IN)
+
+Info from: http://mdfs.net/Info/Comp/BBC/MIDI/m2000
 
 ## Resources
 
@@ -26,6 +37,8 @@ Currently all the 74xx series logic ICs are available new. The 6850 UART ICs are
 * Here's the Stardot thread about this project: https://stardot.org.uk/forums/viewtopic.php?f=3&t=16895
 
 * The Stardot 8bit hardware forum often has posts about the Hybrid Music system: https://stardot.org.uk/forums/viewforum.php?f=3
+
+* Information about Midi on the BBC Microcomputer: http://mdfs.net/Info/Comp/BBC/MIDI/
 
 ## Licence
 

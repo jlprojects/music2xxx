@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Music 2xxx Midi Interface"
-Date "2019-09-04"
-Rev "1.1"
+Date "2019-07-11"
+Rev "1.0"
 Comp "J Lane"
 Comment1 "Based on Colin Fraser's reverse engineered circuit"
 Comment2 "Hybrid Music 2000 Clone"
